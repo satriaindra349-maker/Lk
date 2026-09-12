@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tolong Maafin Aku Yah? 🥺</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #ffe6e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button, .link-btn {
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #yesBtn { background-color: #ff4d6d; color: white; width: 48%; }
+    #noBtn { background-color: #ccc; color: #333; width: 48%; transition: transform 0.1s; }
+
+    .option-btn {
+      background-color: #ff758f;
+      color: white;
+      margin-bottom: 10px;
+      text-align: left;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- SLIDE 1 -->
+    <div id="slide1">
+      <h1>sayangg aku minta maaf yah... 🥺</h1>
+      <p>ututuu sayangg, maaf yaa? akuu minta maaf karna aku engga ngabarin kamu waktu mau berangkat ke puncak dan ninggalin kamu tanpa ngasih kabar sebelum nya, maaf udah bikin kamu kesel, aku menyesal banget huhu(⁠╥⁠﹏⁠╥⁠), sayangg udah dong ngambeknya, kan aku kangen :(</p>
+      <div class="btn-container">
+        <button id="noBtn" onmouseover="kabur()" onclick="kabur(event)" ontouchstart="kabur(event)">Gak Mau</button>
+        <button id="yesBtn" onclick="maafin()">Iya, Maafin</button>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div id="slide2" class="hidden">
+      <h1>HOREEEEE! makasihh saayanggg! 🥰</h1>
+      <p>eheheh bakalan aku coba buat lebih engga ngeselin lagii, aku kurang kurangin ngeselin nya sayang, sekarang ayoo kita baikan miaw miaw, kalo kamu masii ngerasa sedih atau bete coba peluk sucipto deh eheheh jangan lupa selain punya aku kamu juga punya sucipto yeayy, aku saayangg kamu:3</p>
+      <a class="link-btn" style="background-color: #7209b7; margin-bottom: 10px;" href="https://vt.tiktok.com/ZSq2NQYJh/" target="_blank">liat deh ini 🎬</a>
+      <button class="link-btn" style="background-color: #ff4d6d;" onclick="keSlide3()">aku punya sebuah pilihan buat kamu ✨</button>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div id="slide3" class="hidden">
+      <h1>PILIH OPSI KAMU 🎁</h1>
+      <p>Pilih salah satu penawaran spesial dari aku di bawah ini yaa!</p>
+      <button class="option-btn" onclick="pilihOpsi(1)">1. Maafin aku dan aku bakalan jadi lebih baik 🥺❤️</button>
+      <button class="option-btn" onclick="pilihOpsi(2)">2. Maafin aku dan kamu bakalan dapet 1 permintaan yang bakalan aku kabulkan (yang masuk akal jir) 🎁✨</button>
+      <button class="option-btn" onclick="pilihOpsi(3)">3. Kamu bisa pilih opsi ke-1 dan ke-2 sekaligus setelah maafin aku 🥰💖</button>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div id="slide4" class="hidden">
+      <h1>SIAP CINTA! 💖</h1>
+      <p>Klik tombol di bawah ini buat langsung kirim pilihan kamu ke Satria yaa! 🥰</p>
+      <a id="waBtn" class="link-btn" style="background-color: #25D366;" href="#" target="_blank">minta ke satria 💬</a>
+    </div>
+  </div>
+
+  <script>
+    function kabur(e) {
+      if(e) e.preventDefault();
+      const noBtn = document.getElementById('noBtn');
+      const randomX = (Math.random() * 100) - 50;
+      const randomY = (Math.random() * 60) - 30;
+      noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    function maafin() {
+      document.getElementById('slide1').classList.add('hidden');
+      document.getElementById('slide2').classList.remove('hidden');
+    }
+
+    function keSlide3() {
+      document.getElementById('slide2').classList.add('hidden');
+      document.getElementById('slide3').classList.remove('hidden');
+    }
+
+    function pilihOpsi(nomor) {
+      let teksWA = "";
+      if (nomor === 1) {
+        alert("Yeay! Janji deh aku bakal berusaha jadi yang lebih baik buat kamu! 😘❤️");
+        teksWA = "sayang aku pilih opsi pertama:3";
+      } else if (nomor === 2) {
+        alert("Deal! 1 Permintaan kamu bakal aku turutin (asal masuk akal yaa xixixi)! 🎁✨");
+        teksWA = "sayang aku pilih opsi kedua:3";
+      } else if (nomor === 3) {
+        alert("Borongan nih yeee! Oke deal, aku bakal jadi lebih baik DAN turutin 1 permintaan kamu! 💖🎉");
+        teksWA = "sayang aku pilih opsi ketiga:3";
+      }
+
+      document.getElementById('waBtn').href = "https://wa.me/6281575032089?text=" + encodeURIComponent(teksWA);
+      document.getElementById('slide3').classList.add('hidden');
+      document.getElementById('slide4').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
